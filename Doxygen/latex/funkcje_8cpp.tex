@@ -1,0 +1,343 @@
+\hypertarget{funkcje_8cpp}{\section{Dokumentacja pliku /home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/funkcje.cpp}
+\label{funkcje_8cpp}\index{/home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/funkcje.\+cpp@{/home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/funkcje.\+cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+Wykres zależności załączania dla funkcje.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funkcje_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{funkcje_8cpp_aa806a6d84ea11a8548113d500356ae7f}{P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y}~64
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{funkcje_8cpp_ace17a33dbff93bc22f46764f0ed5ce88}{Stworz\+\_\+tablice} (int ilosc\+\_\+elementow)
+\begin{DoxyCompactList}\small\item\em Funkcja tworzy pusta tablice (wypelniona N\+U\+L\+L'ami) z dynamiczna alokacja pamieci (wedle wyboru uzytkownika) \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{funkcje_8cpp_a9f0b920042cd282ead67dc076d164916}{Stworz\+\_\+tablice} (int $\ast$T\+A\+B\+\_\+\+P\+O\+M, int ilosc\+\_\+elementow, int ile\+\_\+sortowac, int Z\+A\+K\+R\+E\+S\+\_\+\+L\+O\+S\+O\+W\+A\+N\+I\+A, int i)
+\begin{DoxyCompactList}\small\item\em Funkcja tworzy tablice wypelniona {\itshape ilosc\+\_\+elementow} elementami z zakresu {\itshape Z\+A\+K\+R\+E\+S\+\_\+\+L\+O\+S\+O\+W\+A\+N\+I\+A}, a nastepnie sortuje czesc tablicy wedle ilosci {\itshape ile\+\_\+sortowac} \end{DoxyCompactList}\item 
+void \hyperlink{funkcje_8cpp_a2527a77ab13de24d77e0a66680cd5abc}{P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E} (int $\ast$$\ast$T\+A\+B\+E\+L\+A\+\_\+\+S\+O\+R\+T\+O\+W\+A\+N, int $\ast$$\ast$T\+A\+B\+E\+L\+A, int ilosc\+\_\+elementow, int rozmiar\+\_\+tablicy)
+\begin{DoxyCompactList}\small\item\em Funkcja przypisujaca wartosci tabeli pierwotnej (utworzonej przed rozpoczeciem sortowan) do tablicy, na ktorej wykonywane sa sortowania -\/ bez tej funkcji sortowanie odbywaloby sie tylko pierwszym algorytmem, a kolejne sortowalyby juz poukladana tabele. \end{DoxyCompactList}\item 
+void \hyperlink{funkcje_8cpp_a3b14dea6d29a95e7c1cb103e00df39db}{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U} (double T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\mbox{[}4\mbox{]}\mbox{[}100\mbox{]}, double T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+S\+U\+M\+Y\mbox{[}4\mbox{]}, int ilosc\+\_\+elementow, double ile\+\_\+posortowac, int zakres, int rozmiar\+\_\+petli)
+\item 
+void \hyperlink{funkcje_8cpp_a386f1a3ab0a1e37ec4c0d9df3ed0ebcc}{Sortowanie\+\_\+przez\+\_\+\+Scalanie} (int $\ast$T\+A\+B\+\_\+\+P\+O\+M, int $\ast$T\+A\+B\+L\+I\+C\+A, int lewy, int prawy)
+\begin{DoxyCompactList}\small\item\em Algorytm sortowania przez scalanie. \end{DoxyCompactList}\item 
+int \hyperlink{funkcje_8cpp_a1d774831882a4bac5c8012a1c0f44bfd}{Sortowanie\+\_\+\+Szybkie} (int $\ast$T\+A\+B\+L\+I\+C\+A, int lewy, int prawy, int P\+I\+W\+O\+T, bool introspektywne)
+\begin{DoxyCompactList}\small\item\em Algorytm sortowanie szybkiego. \end{DoxyCompactList}\item 
+void \hyperlink{funkcje_8cpp_afde57cb4cb5b41a2bdd32f85f94b2ddf}{Sortowanie\+\_\+\+Introspektywne} (int $\ast$T\+A\+B\+L\+I\+C\+A, int poczatek, int koniec, int L\+I\+M\+I\+T, bool introspektywne)
+\begin{DoxyCompactList}\small\item\em Algorytm Sortowania Introspektywnego. \end{DoxyCompactList}\item 
+void \hyperlink{funkcje_8cpp_af6adfabbbad6df1fec08f1ef1f856069}{Sortowanie\+\_\+\+Introspektywne\+\_\+petla} (int $\ast$T\+A\+B\+L\+I\+C\+A, int poczatek, int koniec, int L\+I\+M\+I\+T, bool introspektywne)
+\item 
+void \hyperlink{funkcje_8cpp_aa094b63bf46616da7c24d73c9cc0ca1e}{Sortowanie\+\_\+przez\+\_\+kopcowanie} (int $\ast$tablica, int lewy, int prawy)
+\begin{DoxyCompactList}\small\item\em Algorytm sortowania przez kopcowanie. \end{DoxyCompactList}\item 
+void \hyperlink{funkcje_8cpp_a62fc2c2ff60af5234f7a3163a52d1ff6}{Kopiec} (int $\ast$tablica, int poczatek, int koniec, int lewy)
+\item 
+int \hyperlink{funkcje_8cpp_abcf531366a1c7e8d850326e2a7480741}{N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T} (int $\ast$T\+A\+B\+L\+I\+C\+A, int lewy, int srodek, int prawy)
+\item 
+string \hyperlink{funkcje_8cpp_a0a975119120cc8c23938545924c8f880}{Double\+\_\+na\+\_\+\+String} (double numer)
+\item 
+void \hyperlink{funkcje_8cpp_a1d73d0d6aa1c405560c9674351dcfca1}{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U} (double T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\mbox{[}4\mbox{]}\mbox{[}100\mbox{]}, double T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+S\+U\+M\+Y\mbox{[}4\mbox{]}, int ilosc\+\_\+elementow, int wybor\+\_\+1, double ile\+\_\+posortowac, int wybor\+\_\+2, int zakres, int rozmiar\+\_\+petli)
+\begin{DoxyCompactList}\small\item\em Funkcja zapisujaca czasy sortowan do plikow -\/ osobnych dla kazdego sortowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\hypertarget{funkcje_8cpp_aa806a6d84ea11a8548113d500356ae7f}{\index{funkcje.\+cpp@{funkcje.\+cpp}!P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y@{P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y}}
+\index{P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y@{P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+G\+\_\+\+W\+I\+E\+L\+K\+O\+S\+C\+I\+\_\+\+T\+A\+B\+L\+I\+C\+Y~64}}\label{funkcje_8cpp_aa806a6d84ea11a8548113d500356ae7f}
+
+
+\subsection{Dokumentacja funkcji}
+\hypertarget{funkcje_8cpp_a0a975119120cc8c23938545924c8f880}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Double\+\_\+na\+\_\+\+String@{Double\+\_\+na\+\_\+\+String}}
+\index{Double\+\_\+na\+\_\+\+String@{Double\+\_\+na\+\_\+\+String}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Double\+\_\+na\+\_\+\+String}]{\setlength{\rightskip}{0pt plus 5cm}string Double\+\_\+na\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{double}]{numer}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a0a975119120cc8c23938545924c8f880}
+\hypertarget{funkcje_8cpp_a62fc2c2ff60af5234f7a3163a52d1ff6}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Kopiec@{Kopiec}}
+\index{Kopiec@{Kopiec}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Kopiec}]{\setlength{\rightskip}{0pt plus 5cm}void Kopiec (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{tablica, }
+\item[{int}]{poczatek, }
+\item[{int}]{koniec, }
+\item[{int}]{lewy}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a62fc2c2ff60af5234f7a3163a52d1ff6}
+\hypertarget{funkcje_8cpp_abcf531366a1c7e8d850326e2a7480741}{\index{funkcje.\+cpp@{funkcje.\+cpp}!N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T@{N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T}}
+\index{N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T@{N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T}]{\setlength{\rightskip}{0pt plus 5cm}int N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+L\+I\+C\+A, }
+\item[{int}]{lewy, }
+\item[{int}]{srodek, }
+\item[{int}]{prawy}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_abcf531366a1c7e8d850326e2a7480741}
+\hypertarget{funkcje_8cpp_a2527a77ab13de24d77e0a66680cd5abc}{\index{funkcje.\+cpp@{funkcje.\+cpp}!P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E@{P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E}}
+\index{P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E@{P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+Z\+Y\+P\+I\+S\+A\+N\+I\+E (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{T\+A\+B\+E\+L\+A\+\_\+\+S\+O\+R\+T\+O\+W\+A\+N, }
+\item[{int $\ast$$\ast$}]{T\+A\+B\+E\+L\+A, }
+\item[{int}]{ilosc\+\_\+elementow, }
+\item[{int}]{rozmiar\+\_\+tablicy}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a2527a77ab13de24d77e0a66680cd5abc}
+
+
+Funkcja przypisujaca wartosci tabeli pierwotnej (utworzonej przed rozpoczeciem sortowan) do tablicy, na ktorej wykonywane sa sortowania -\/ bez tej funkcji sortowanie odbywaloby sie tylko pierwszym algorytmem, a kolejne sortowalyby juz poukladana tabele. 
+
+
+
+ \subsubsection*{N\+A\+D\+P\+I\+S\+Y\+W\+A\+N\+I\+E T\+A\+B\+L\+I\+C\+Y I Z\+A\+P\+I\+S\+Y\+W\+A\+N\+I\+E }\hypertarget{funkcje_8cpp_afde57cb4cb5b41a2bdd32f85f94b2ddf}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Sortowanie\+\_\+\+Introspektywne@{Sortowanie\+\_\+\+Introspektywne}}
+\index{Sortowanie\+\_\+\+Introspektywne@{Sortowanie\+\_\+\+Introspektywne}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Sortowanie\+\_\+\+Introspektywne}]{\setlength{\rightskip}{0pt plus 5cm}void Sortowanie\+\_\+\+Introspektywne (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+L\+I\+C\+A, }
+\item[{int}]{poczatek, }
+\item[{int}]{koniec, }
+\item[{int}]{L\+I\+M\+I\+T, }
+\item[{bool}]{introspektywne}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_afde57cb4cb5b41a2bdd32f85f94b2ddf}
+
+
+Algorytm Sortowania Introspektywnego. 
+
+Funkcja Najpierw \char`\"{}dzieli\char`\"{} tablice kilka czesci i sortuje po kolei kolejne sekcje -\/ uzywajac sortowania przez kopcowanie. Po wstepnym posortowaniu tablicy zostaje ona poddana sortowaniu szybkiemu (ze wskazanym Piwotem wyznaczonym przez funkcje N\+A\+J\+L\+E\+P\+S\+Z\+Y\+\_\+\+P\+I\+W\+O\+T). Nastepnie wywolywana jest rekurencyjnie petla sortowania introspektywnego, a numer elementu na ktorym zostalo zakonczone dane sortowanie jest okreslana przez numer elementu zwracany przez sortowanie szybkie. Po podziale tablicy na mniej niz (64 elementy) sortowanie dopelnia sortowanie przez wstawianie -\/ ktore dziala bardzo dobrze dla prawie posortowanych tabel
+
+
+\begin{DoxyParams}{Parametry}
+{\em T\+A\+B\+L\+I\+C\+A} & -\/ Tablica (jeden wiersz) zawieracajaca sortowany zestaw liczb \\
+\hline
+{\em poczatek} & -\/ poczatek podzialu tablicy -\/ wskaznik na element tablicy przekazywany do petli Introsorta \\
+\hline
+{\em koniec} & -\/ koniec podzialu tablicy \\
+\hline
+{\em L\+I\+M\+I\+T} & -\/ tablica jest wstepnie sortowana przez algorytm sortowania przez kopcowanie, a gdy zostanie posortowana do pewnego stopnia, zostaje przekazana do sortowania szybkiego \\
+\hline
+{\em introspektywne} & -\/ zmienna decydujaca jak ma dzialac sortowanie szybkie \\
+\hline
+\end{DoxyParams}
+Sortowanie\+\_\+\+Introspektywne\+\_\+petla zawieta sortowania przez kopcowanie i sortowanie szybkie
+
+Dokonczenie skladania / sortowania tablicy poprzez proste sortowanie przez wstawianie \hypertarget{funkcje_8cpp_af6adfabbbad6df1fec08f1ef1f856069}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Sortowanie\+\_\+\+Introspektywne\+\_\+petla@{Sortowanie\+\_\+\+Introspektywne\+\_\+petla}}
+\index{Sortowanie\+\_\+\+Introspektywne\+\_\+petla@{Sortowanie\+\_\+\+Introspektywne\+\_\+petla}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Sortowanie\+\_\+\+Introspektywne\+\_\+petla}]{\setlength{\rightskip}{0pt plus 5cm}void Sortowanie\+\_\+\+Introspektywne\+\_\+petla (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+L\+I\+C\+A, }
+\item[{int}]{poczatek, }
+\item[{int}]{koniec, }
+\item[{int}]{L\+I\+M\+I\+T, }
+\item[{bool}]{introspektywne}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_af6adfabbbad6df1fec08f1ef1f856069}
+
+
+ \subsubsection*{F\+U\+N\+K\+C\+J\+E I\+N\+T\+R\+O\+S\+O\+R\+T\+A + S\+O\+R\+T\+O\+W\+A\+N\+I\+E P\+R\+Z\+E\+Z K\+O\+P\+C\+O\+W\+A\+N\+I\+E }\hypertarget{funkcje_8cpp_aa094b63bf46616da7c24d73c9cc0ca1e}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Sortowanie\+\_\+przez\+\_\+kopcowanie@{Sortowanie\+\_\+przez\+\_\+kopcowanie}}
+\index{Sortowanie\+\_\+przez\+\_\+kopcowanie@{Sortowanie\+\_\+przez\+\_\+kopcowanie}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Sortowanie\+\_\+przez\+\_\+kopcowanie}]{\setlength{\rightskip}{0pt plus 5cm}void Sortowanie\+\_\+przez\+\_\+kopcowanie (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{tablica, }
+\item[{int}]{lewy, }
+\item[{int}]{prawy}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_aa094b63bf46616da7c24d73c9cc0ca1e}
+
+
+Algorytm sortowania przez kopcowanie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em tablica} & -\/ Tablica (jeden wiersz) zawieracajaca sortowany zestaw liczb \\
+\hline
+{\em lewy} & -\/ wskaznik (nr elementu) lewej granicy sortowanej czesci tablicy \\
+\hline
+{\em prawy} & -\/ wskaznik (nr elementu) prawej granicy sortowanej czesci tablicy \\
+\hline
+\end{DoxyParams}
+\hypertarget{funkcje_8cpp_a386f1a3ab0a1e37ec4c0d9df3ed0ebcc}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Sortowanie\+\_\+przez\+\_\+\+Scalanie@{Sortowanie\+\_\+przez\+\_\+\+Scalanie}}
+\index{Sortowanie\+\_\+przez\+\_\+\+Scalanie@{Sortowanie\+\_\+przez\+\_\+\+Scalanie}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Sortowanie\+\_\+przez\+\_\+\+Scalanie}]{\setlength{\rightskip}{0pt plus 5cm}void Sortowanie\+\_\+przez\+\_\+\+Scalanie (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+\_\+\+P\+O\+M, }
+\item[{int $\ast$}]{T\+A\+B\+L\+I\+C\+A, }
+\item[{int}]{lewy, }
+\item[{int}]{prawy}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a386f1a3ab0a1e37ec4c0d9df3ed0ebcc}
+
+
+Algorytm sortowania przez scalanie. 
+
+
+
+ \subsubsection*{S\+O\+R\+T\+O\+W\+A\+N\+I\+A\+: S\+C\+A\+L\+A\+N\+I\+E / Q\+U\+I\+C\+K\+S\+O\+R\+T / I\+N\+T\+R\+O\+S\+P\+E\+K\+T\+Y\+W\+N\+E }inicjalizacja zmiennych
+
+wybor srodkowego elementu danego podzialu
+
+Dziel rekurencyjnie
+
+Inicjalizacja wskaznikow / tymczasowych wartosci elementow lewy i srodek I rozpoczecie procedury sortowania elementow w \char`\"{}podtablicach\char`\"{}
+
+Przypisanie posortowanych elementow do tablicy glownej\hypertarget{funkcje_8cpp_a1d774831882a4bac5c8012a1c0f44bfd}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Sortowanie\+\_\+\+Szybkie@{Sortowanie\+\_\+\+Szybkie}}
+\index{Sortowanie\+\_\+\+Szybkie@{Sortowanie\+\_\+\+Szybkie}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Sortowanie\+\_\+\+Szybkie}]{\setlength{\rightskip}{0pt plus 5cm}int Sortowanie\+\_\+\+Szybkie (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+L\+I\+C\+A, }
+\item[{int}]{lewy, }
+\item[{int}]{prawy, }
+\item[{int}]{P\+I\+W\+O\+T, }
+\item[{bool}]{introspektywne}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a1d774831882a4bac5c8012a1c0f44bfd}
+
+
+Algorytm sortowanie szybkiego. 
+
+Do funkcji przekazywana jest tablica (jeden wiersz), a nastepnie wykonywany jest na niej algorytm sortowania szybkiego. Funkcja ta jest rowniez wykozystywana podczas sortowania introspektywnego -\/ stad zmienna bool introspektywne. Funkcja dzieli tablice wg. Piwotu -\/ dla introspektywnego okreslany wg algorytmu wyboru Piwotu, dla szybkiego testy wykazaly, ze szybszy jest podzial tablicy na pol.
+
+Nastepnie poprawnosc polozenia elementu w tablicy jest sprawdzany -\/ jezeli jest po \char`\"{}zlej stronie\char`\"{} liczby okreslajacej srodek tablicy (piwot) zostaja zamienione -\/ jezeli nie to przesuwany jest wskaznik lewego i prawego elementu do czasu znalezienia takiej \char`\"{}pary\char`\"{}. Nastepnie wstepnie posortowana tablica jest dzielona na mniejsze, az do rozbicia na najmniejsze mozliwe podtablice
+
+
+\begin{DoxyParams}{Parametry}
+{\em T\+A\+B\+L\+I\+C\+A} & -\/ Tablica (jeden wiersz) zawieracajaca sortowany zestaw liczb \\
+\hline
+{\em lewy} & -\/ Wartosc lewego elementu \\
+\hline
+{\em prawy} & -\/ Wartosc prawego elementu \\
+\hline
+{\em P\+I\+W\+O\+T} & -\/ Zmienna uzywana przez sortowanie introspektywne. Element podzialu tablicy jest wybierany na podstawie algorytmu \\
+\hline
+{\em introspektywne} & -\/ okresla jak uzywac sortowania szybkiego -\/ implementacja dla sortowania introspektywnego nieco rozni sie niz w przypadku sortowania szybkiego \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+int -\/ Zwraca posortowany wiersz tablicy do petli glownej programu 
+\end{DoxyReturn}
+czy uzyc sortowania jako czesci introspektywnego -\/ okreslenie Piwotu
+
+jezeli nie to wskaz srodek jako optymalny piwot
+
+przypisanie wskaznika (w formie wartosci) dla przegladania tablicy
+
+dopuki nie sprawdzi calej tablicy
+
+dopuki element mniejszy od piwotu, zwiekszaj numer elementu az trafisz na wiekszy od niego
+
+dopuki element wiekszy od piwotu, zmniejszaj numer elementu az trafisz na mniejszy od niego
+
+zamien oba nie pasujace elementy ze soba miejscami
+
+i przesun sie do kolejnych elementow
+
+jezeli elementy beda rowne sobie (dojda do \char`\"{}piwotu\char`\"{}) to zwroc (dla introspektywnego) wskaznik na lewy element lub przerwij petle \hypertarget{funkcje_8cpp_ace17a33dbff93bc22f46764f0ed5ce88}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Stworz\+\_\+tablice@{Stworz\+\_\+tablice}}
+\index{Stworz\+\_\+tablice@{Stworz\+\_\+tablice}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Stworz\+\_\+tablice}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ Stworz\+\_\+tablice (
+\begin{DoxyParamCaption}
+\item[{int}]{ilosc\+\_\+elementow}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_ace17a33dbff93bc22f46764f0ed5ce88}
+
+
+Funkcja tworzy pusta tablice (wypelniona N\+U\+L\+L'ami) z dynamiczna alokacja pamieci (wedle wyboru uzytkownika) 
+
+
+
+ \subsubsection*{T\+W\+O\+R\+Z\+E\+N\+I\+E T\+A\+B\+L\+I\+C }\hypertarget{funkcje_8cpp_a9f0b920042cd282ead67dc076d164916}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Stworz\+\_\+tablice@{Stworz\+\_\+tablice}}
+\index{Stworz\+\_\+tablice@{Stworz\+\_\+tablice}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Stworz\+\_\+tablice}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ Stworz\+\_\+tablice (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{T\+A\+B\+\_\+\+P\+O\+M, }
+\item[{int}]{ilosc\+\_\+elementow, }
+\item[{int}]{ile\+\_\+sortowac, }
+\item[{int}]{Z\+A\+K\+R\+E\+S\+\_\+\+L\+O\+S\+O\+W\+A\+N\+I\+A, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a9f0b920042cd282ead67dc076d164916}
+
+
+Funkcja tworzy tablice wypelniona {\itshape ilosc\+\_\+elementow} elementami z zakresu {\itshape Z\+A\+K\+R\+E\+S\+\_\+\+L\+O\+S\+O\+W\+A\+N\+I\+A}, a nastepnie sortuje czesc tablicy wedle ilosci {\itshape ile\+\_\+sortowac} 
+
+
+\begin{DoxyParams}{Parametry}
+{\em T\+A\+B\+\_\+\+P\+O\+M} & -\/ Tablica pomocnicza (pierwotnie pusta) przekazywana do funkcji tylko w celu sortowania wstepnego -\/ wymagana do sortowania przez scalanie -\/ algorytmu wykozystanego do posortowania wstepnego tablicy \\
+\hline
+{\em ilosc\+\_\+elementow} & -\/ ilosc elementow okreslona przez uzytkownika, okresla wielkosc tworzonej tablicy \\
+\hline
+{\em ile\+\_\+sortowac} & -\/ sortowanie wstepne tablicy elementow \\
+\hline
+{\em Z\+A\+K\+R\+E\+S\+\_\+\+L\+O\+S\+O\+W\+A\+N\+I\+A} & -\/ zakres (0 -\/ x) -\/ przedzial, z ktorego losowane beda liczby do danej tablicy \\
+\hline
+{\em i} & -\/ jako ze do program tworzy od razu 100 takich tabel (dla lepszej analizy dzialania algorytmow), przekazywany jest numer aktualnie tworzonej tablicy -\/ dodanie go do R\+A\+N\+D'a podczas losowania liczb zapobiega utworzeniu dwoch takich samych tabel obok siebie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+int -\/ zwraca tablice (w formie tablicy jednowymiarowej o wielkosci $\ast$\mbox{[}ilosc\+\_\+elementow\mbox{]}$\ast$ i przypisuje ja jako dany wiersz tablicy dwuwymiarowej o rozmiarze $\ast$\mbox{[}100\mbox{]}\mbox{[}ilosc\+\_\+elementow\mbox{]}$\ast$ w petli glownej programu 
+\end{DoxyReturn}
+\hypertarget{funkcje_8cpp_a3b14dea6d29a95e7c1cb103e00df39db}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U@{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}}
+\index{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U@{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}]{\setlength{\rightskip}{0pt plus 5cm}void Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U (
+\begin{DoxyParamCaption}
+\item[{double}]{T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\mbox{[}4\mbox{]}\mbox{[}100\mbox{]}, }
+\item[{double}]{T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+S\+U\+M\+Y\mbox{[}4\mbox{]}, }
+\item[{int}]{ilosc\+\_\+elementow, }
+\item[{double}]{ile\+\_\+posortowac, }
+\item[{int}]{zakres, }
+\item[{int}]{rozmiar\+\_\+petli}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a3b14dea6d29a95e7c1cb103e00df39db}
+\hypertarget{funkcje_8cpp_a1d73d0d6aa1c405560c9674351dcfca1}{\index{funkcje.\+cpp@{funkcje.\+cpp}!Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U@{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}}
+\index{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U@{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}!funkcje.\+cpp@{funkcje.\+cpp}}
+\subsubsection[{Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U}]{\setlength{\rightskip}{0pt plus 5cm}void Z\+A\+P\+I\+S\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+D\+O\+\_\+\+P\+L\+I\+K\+U (
+\begin{DoxyParamCaption}
+\item[{double}]{T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\mbox{[}4\mbox{]}\mbox{[}100\mbox{]}, }
+\item[{double}]{T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+S\+U\+M\+Y\mbox{[}4\mbox{]}, }
+\item[{int}]{ilosc\+\_\+elementow, }
+\item[{int}]{wybor\+\_\+1, }
+\item[{double}]{ile\+\_\+posortowac, }
+\item[{int}]{wybor\+\_\+2, }
+\item[{int}]{zakres, }
+\item[{int}]{rozmiar\+\_\+petli}
+\end{DoxyParamCaption}
+)}}\label{funkcje_8cpp_a1d73d0d6aa1c405560c9674351dcfca1}
+
+
+Funkcja zapisujaca czasy sortowan do plikow -\/ osobnych dla kazdego sortowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & -\/ przechowuje czasy sortowania poszczegolnego wiersza
+\begin{DoxyEnumerate}
+\item Rozmiar Y -\/ czasy poszczegolnego sortowania
+\item Rozmiar X -\/ czas sortowania kazdego wiersza tabeli 
+\end{DoxyEnumerate}\\
+\hline
+{\em T\+A\+B\+E\+L\+A\+\_\+\+C\+Z\+A\+S\+O\+W\+\_\+\+S\+U\+M\+Y\mbox{[}$\,$\mbox{]}} & -\/ Czas wykonania kazdego algorytmu (suma czasow wykonania sortowan na 100 tablicach) \\
+\hline
+{\em ilosc\+\_\+elementow} & -\/ ilosc elementow kazdej tablicy \\
+\hline
+{\em wybor\+\_\+1} & -\/ przekazywana w celu okreslenia nazwy pliku wynikowego \\
+\hline
+{\em ile\+\_\+posortowac} & -\/ ilosc wstepnie posortowanych elementow \\
+\hline
+{\em wybor\+\_\+2} & -\/ okreslenie ilosci posortowanych elementow -\/ do nazwy pliku \\
+\hline
+{\em zakres} & -\/ zakres (0 -\/ x), z ktorego losowane sa liczby w tablicach \\
+\hline
+{\em rozmiar\+\_\+petli} & -\/ ilosc wierszy (instancji tablic) do sortowania \\
+\hline
+\end{DoxyParams}

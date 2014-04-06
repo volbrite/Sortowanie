@@ -1,0 +1,107 @@
+\hypertarget{main_8cpp}{\section{Dokumentacja pliku /home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/main.cpp}
+\label{main_8cpp}\index{/home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/main.\+cpp@{/home/administrator/\+P\+R\+O\+G\+R\+A\+M\+Y\+\_\+\+M\+A\+R\+Z\+E\+C\+\_\+2014/\+Sortowanie/main.\+cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}interfejs.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}funkcje.\+h\char`\"{}}\\*
+Wykres zależności załączania dla main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_aa50aa866c5823769bb02e986d29a0589}{R\+O\+Z\+M\+I\+A\+R}~100
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\hypertarget{main_8cpp_aa50aa866c5823769bb02e986d29a0589}{\index{main.\+cpp@{main.\+cpp}!R\+O\+Z\+M\+I\+A\+R@{R\+O\+Z\+M\+I\+A\+R}}
+\index{R\+O\+Z\+M\+I\+A\+R@{R\+O\+Z\+M\+I\+A\+R}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{R\+O\+Z\+M\+I\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+Z\+M\+I\+A\+R~100}}\label{main_8cpp_aa50aa866c5823769bb02e986d29a0589}
+$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$$^\wedge$ Testy algorytmow sortowania Autor\+: Bizon Michal \subsubsection*{Indeks\+: 195251 }
+
+Aby przetestowac dzialanie algorytmow (D\+E\+B\+U\+G), nalezy zmienic wartosc nr 1 tabeli \char`\"{}const int ilosc\+\_\+elementow\char`\"{} na 100 i odkomentowac petle for po kazdym sortowaniu, tudziez po stworzeniu tablicy. Dla wygody uzytkownika wyswietlany jest tylko pierwszy wiersz calej tablicy (wyswietlanie 100 wierszy po 100 elementow czterokrotnie (po kazdym sortowaniu) byloby uciazliwe).
+
+Program dla kazdej partii sortowan (tj wszystkich 4) uzywa tablicy z tymi samymi wartosciami, aby testy byly wiarygodne. Dlatego zostaly stworzone dwie tablice -\/ jedna bazowa -\/ T\+A\+B\+L\+I\+C\+A, przechowuje pierwotna tablice, druga pomocnicza -\/ do ktorej przypisywane sa pierwotne wartosci po kazdym sortowaniu, a dopiero pozniej sa sortowane.
+
+Pomiar czasu jest dokonywany z dokladnoscia do 0.\+001 \mbox{[}s\mbox{]}, co w przypadku malych tablic jest niezbyt dokladne, jednak przy wiekszych spelnia swoje zadanie.
+
+Dla wygody przeprowadzenia analiz dane dotyczace czasow sortowan sa zapisywane do pliku tekstowego z pseudo-\/formatowaniem
+
+Mimo iz rozwiazanie jakie zastosowalem (odnosnie przesylania i sortowania jednego wiersza funkcji) nie jest idealne, ale pozwala na dokladny pomiar czasu oraz wygodne zarzadzanie pamiecia. 
+
+\subsection{Dokumentacja funkcji}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Glowna tablica -\/ \mbox{[}\char`\"{}\+R\+O\+Z\+M\+I\+A\+R\char`\"{} wierszy\mbox{]} X \mbox{[}\char`\"{}ilosc\+\_\+elementow\char`\"{} kolumn\mbox{]}
+
+Wykozystanie tej samej tablicy dla kazdego sortowania
+
+Tablica pomocnicza wysylana do funkcji sortowania przez scalanie
+
+Aby bez problemow zapisac dane do pliku umiescilem je w tabeli
+
+Sumy takze
+
+sterowanie opcjami programu
+
+rozmiar kazdego wiersza w tablicy
+
+ilosc wstepnie posortowanych elementow
+
+Zakres (0-\/x), z ktorego uzytkownik losuje liczby
+
+Sterowanie glownym menu -\/ do petli switch
+
+Zliczanie czasu pomiedzy wykonaniem sie operacji
+
+oraz roznica miedzy nimi
+
+Introspektywne -\/ aby odroznic kiedy qiucksort ma dzialac samodzielnie a kiedy jedynie partycjonowac tablice dla introsorta
+
+Wypisanie interfejsu graficznego programu oraz
+
+parametrow symulacji
+
+Wypisanie dostepnych opcji wyboru
+
+Maksymalna wartoscia jest 4
+
+Zadeklarowanie wielkosci tablic T\+A\+B\+\_\+\+P\+O\+M i T\+A\+B\+E\+L\+A\+\_\+\+S\+O\+R\+T\+O\+W\+A\+N dla danego \char`\"{}przebiegu\char`\"{} funkcji -\/ wypelniane N\+U\+L\+L'ami
+
+Budowanie T\+A\+B\+L\+I\+C\+Y Na podstawie parametrow wylicza ile elementow ma byc posortowane poczatkowo, jezeli wartosc \char`\"{}ile\+\_\+posortowac\char`\"{} wynosi 0, to program najpierw sortuje tablice za pomoca Sortowania przez Scalanie, a nastepnie odwraca tabele (pierwszy z ostatnim itd) funkcja swap(\+A\mbox{[}n\mbox{]},\+A\mbox{[}m\mbox{]}).
+
+W innym wypadku funkcja wylicza, jakie wartosci powinny byc z danego zakresu (np 25\% z 1000 to 250), losuje liczby z tego przedzia�u, sortuje je, a nastepnie losuje liczby z zakresu 250-\/1000.
+
+Zmienna i jest przekazana aby rand by� lepszy, tj aby nie bylo obok siebie (np T\+A\+B\+L\+I\+C\+A\mbox{[}0\mbox{]} i T\+A\+B\+L\+I\+C\+A\mbox{[}1\mbox{]}) takich samych wartosci randa generowanego na podstawie aktualnego czasu
+
+
+
+ Algorytmy S\+O\+R\+T\+O\+W\+A\+N\+I\+A 
+
+ Sortowanie przez S\+C\+A\+L\+A\+N\+I\+E
+
+Sortowanie S\+Z\+Y\+B\+K\+I\+E
+
+Sortowanie I\+N\+T\+R\+O\+S\+P\+E\+K\+T\+Y\+W\+N\+E
+
+Sortowanie przez Kopcowanie 
