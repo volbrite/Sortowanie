@@ -1,0 +1,234 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{color}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[shell]{gnuplottex}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{mathtools}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\author{Michał Bizoń}
+\title{Sprawozdanie z Sortowania Liczb}
+\setlength{\parskip}{2mm}
+\begin{document}
+
+\title{Sprawozdanie z Sortowania Liczb}
+\author{Michał Bizoń}
+\date{05 IV 2014}
+\maketitle
+
+\section{Założenia i implementacja metod}
+Naszym zadaniem była implementacja algorytmów sortowania liczb - zaimplementowane zostały przeze mnie algorytmy: \textbf{QuickSort , MergeSort , IntroSort , HeapSort (wymagany do Introsorta)}, a następnie przetestowanie ich pod kątem szybkości oraz przypadków użycia - który jest najbardziej skuteczny przy danym zestawie danych.
+
+\subsection{MergeSort - Sortowanie przez Scalanie}
+Rekurencyjny algorytm sortowania danych, stosujący metodę \textbf{\emph{Dziel i zwyciężaj}}. Odkrycie algorytmu przypisuje się \textbf{\emph{Johnowi von Neumannowi}}. Czas tego sortowania wynosi \textbf{\emph{O(n*log[n])}}.
+
+Algorytm ten:
+\begin{itemize}
+	\item Dzieli dane na dwie równe części
+	\item Sortuje każdą część osobno
+	\item Scala posortowane elementy w jeden ciąg
+\end{itemize}
+
+\subsection{QuickSort - Sortowanie Szybkie}
+Jeden z popularnych algorytmów sortowania działających na zasadzie \textbf{\emph{Dziel i zwyciężaj}}. Sortowanie Szybkie zostało wynalezione w 1962 przez C.A.R. Hoare'a. Algorytm sortowania szybkiego jest wydajny: jego średnia złożoność obliczeniowa jest rzędu \textbf{\emph{O(n*log[n])}}. Ze względu na szybkość i prostotę implementacji jest powszechnie używany.
+
+Algorytm ten:
+
+\begin{itemize}
+	\item Wybiera z tablicy element rozdzielający (tzw. \textbf{Piwot}) i przenosi elementy mniejsze od niego na lewo, a większe na prawo
+	\item Po zakończonym przenoszeniu algorytm wywołuje się rekurencyjnie dla lewego podzbioru dopóki wszystkie dane w lewym podzbiorze nie zostaną posortowane. To samo dzieje się z prawym podzbiorem
+\end{itemize}
+
+Piwot jest zawsze wybierany na początku wywołania funkcji.
+
+\subsection{IntroSort - Sortowanie Introspektywne}
+Sortowanie to jest z rodziny hybrydowych, czyli do sortowania wykorzystuje inne algorytmy, które razem działają naprawdę szybko. Wykorzystuje m.in. sortowanie szybkie, sortowanie przez kopcowanie oraz sortowanie przez wstawianie. 
+Na początku Algorytm dzieli tablicę na mniejsze części (wielkość ustalona odgórnie, np. 64 elementy) za pomocą procedury podziału znaną z sortowania szybkiego. Kiedy cała tablica zostanie  wstępnie posortowana, każda z nich jest sortowana poprzez kopcowanie. Całość dopełnia i zamyka sortowanie przez wstawianie, które działa bardzo dobrze dla prawie posortowanych danych.
+
+Algorytm ten:
+\begin{itemize}
+	\item dzieli tablicę na mniejsze części (wielkość ustalona odgórnie, np. 64 elementy) za pomocą procedury podziału znaną z sortowania szybkiego
+	\item Kiedy cała tablica zostanie wstępnie posortowana, każda z nich jest sortowana poprzez kopcowanie
+	\item Całość dopełnia i zamyka sortowanie przez wstawianie, które działa bardzo dobrze dla prawie posortowanych danych.
+\end{itemize}
+
+\section{Sposób Implementacji}
+Napisany przeze mnie program operuje na \textbf{2 tablicach} o wymiarach \textbf{[100][n]}, gdzie \textbf{\textcolor{red}{n}} jest aktualnie wybraną przez użytkownika wielkością. Przy każdym starcie symulacji tworzona jest \textbf{TABELA}, do której przekazywane są dane parametry:
+\begin{itemize}
+	\item ilość elementów w każdej tablicy (rozmiar \textbf{\textcolor{red}{n}})
+	\item ilość wstępnie posortowanych elementów
+	\item zakres losowanych liczb
+	\item parametr „\textbf{\textcolor{red}{i}}” (od 0 do 100) – numer wiersza tablicy – wypełniając tablicę funkcją  RAND() zdarzyło się, że generował dwa wiersze o identycznych wartościach, dodanie „\textbf{\textcolor{red}{i}}” do SRAND rozwiązało ten problem
+\end{itemize}
+Drugą tabelą jest \textbf{TABELA\_SORTOWAN}, wypełniana początkowo wartościami \textit{NULL} o takich samych rozmiarach jak \textbf{TABELA}. Przed każdym sortowaniem następuje przypisanie wartości z \textbf{TABELA} do \textbf{TABELA\_SORTOWAN} (która jest poddawana sortowaniu, dzięki czemu przy każdym sortowaniu operujemy tym samym zestawem danych. Czasy są zapisywane do osobnej tablicy, a następnie zapisywane są do plików \textbf{*.csv} - ich nazwa jest uzależniona od wybranego algorytmu oraz opcji wybranych przed rozpoczęciem symulacji. Po każdym sortowaniu sprawdzana jest kolejność elementów – dla całej tablicy sprawdza czy element n <= n+1.
+
+\section{Wyniki oraz wykresy}
+Wykresy porównujące ogólne czasy przypisań tych algorytmów - dla zestawów danych kolejno:
+\begin{center}
+\textbf{[10 000 ; 50 000 ; 100 000 ; 500 000 ; 1 000 000]}\\
+a także zakresu losowanych liczb - [ 0 ; 99 999 ]\\
+\textcolor{red}{MergeSort} ; \textcolor{green}{QuickSort} ; \textcolor{blue}{IntroSort}\\
+\end{center}
+\newpage
+\begin{center}
+\subsection{Posortowane Odwrotnie}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.217866 & 0.066815 & 0.041242\\\hline
+50 000 & 1.24108 & 0.405296 & 0.232374\\\hline
+100 000 & 2.65195 & 0.915541 & 0.498457\\\hline
+500 000 & 15.3149 & 5.83867 & 2.87433\\\hline
+1 000 000 & 31.9639 & 12.5349 & 6.25958\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane Odwrotnie"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r0_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r0_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r0_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+
+\subsection{Posortowane 25\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.279653 & 0.145696 & 0.161251\\\hline
+50 000 & 1.59893 & 0.846128 & 0.905473\\\hline
+100 000 & 3.40157 & 2.11195 & 2.38316\\\hline
+500 000 & 19.5257 & 11.1548 & 11.6455\\\hline
+1 000 000 & 40.9295 & 23.551 & 24.5284\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 25%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r1_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r1_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r1_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+\newpage
+\subsection{Posortowane 50\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.254603 & 0.115298 & 0.116302\\\hline
+50 000 & 1.47066 & 1.00844 & 1.06264\\\hline
+100 000 & 3.10443 & 1.59201 & 1.43375\\\hline
+500 000 & 17.7761 & 9.85518 & 10.1041\\\hline
+1 000 000 & 37.1798 & 20.64 & 20.8247\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 50%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r2_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r2_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r2_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+
+\subsection{Posortowane 75\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.231321 & 0.086716 & 0.073935\\\hline
+50 000 & 1.32414 & 0.772884 & 0.794843\\\hline
+100 000 & 2.82 & 1.64857 & 1.71199\\\hline
+500 000 & 16.1368 & 8.72012 & 8.53956\\\hline
+1 000 000 & 33.9285 & 16.2207 & 12.4165\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 75%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r3_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r3_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r3_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+\newpage
+\subsection{Posortowane 95\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.214803 & 0.066131 & 0.042678\\\hline
+50 000 & 1.22505 & 0.52572 & 0.246116\\\hline
+100 000 & 2.60647 & 1.14297 & 0.535877\\\hline
+500 000 & 14.9096 & 6.69184 & 4.09729\\\hline
+1 000 000 & 14.9096 & 14.1687 & 8.98775\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 95%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r4_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r4_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r4_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+\subsection{Posortowane 99\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.211942 & 0.062384 & 0.037232\\\hline
+50 000 & 1.20931 & 0.500322 & 0.215102\\\hline
+100 000 & 2.55391 & 1.08974 & 0.472521\\\hline
+500 000 & 14.6977 & 6.75924 & 4.8308\\\hline
+1 000 000 & 30.7118 & 16.355 & 9.62904\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 99%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r5_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r5_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r5_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+\newpage
+\subsection{Posortowane 99,7\% elementów}
+\begin{tabular}{c||c|c|c}
+Il. Elementów & \textcolor{red}{MergeSort} & \textcolor{green}{QuickSort} & \textcolor{blue}{IntroSort}\\\hline
+10 000 & 0.212263 & 0.062026 & 0.035904\\\hline
+50 000 & 1.20672 & 0.496701 & 0.210869\\\hline
+100 000 & 2.54969 & 1.08056 & 0.458917\\\hline
+500 000 & 14.6631 & 6.39672 & 3.90337\\\hline
+1 000 000 & 30.8038 & 15.7354 & 8.53766\\
+\end{tabular}
+\begin{gnuplot}[terminal=eps,terminaloptions={font ",10" linewidth 3},scale=1]
+set title "Zakres 99 999 | Posortowane 99,7%"
+set datafile separator ';'
+set ylabel 'Czas [s]'
+set xlabel 'Ilość przypisanych danych'
+set logscale x 10
+set xtics ('10k' 10000, '50k' 50000, '100k' 100000, '500k' 500000, '1M' 1000000)
+unset key
+plot 'W/r6_wyniki_1.csv' title "MergeSort" with linespoints lt 1 , 'W/r6_wyniki_2.csv' title "QuickSort" with linespoints lt 2, 'W/r6_wyniki_3.csv' title "IntroSort" with linespoints lt 3
+\end{gnuplot}
+\end{center}
+
+\section{Wnioski}
+\begin{enumerate}
+\item Sortowania QuickSort oraz IntroSort działają prawie dwukrotnie szybciej niż MergeSort
+\item Decydując się na wybór QuickSorta nie opłaca się wybierać \textbf{Piwotu} (El. Odniesienia) funkcją napisaną dla introsorta (NAJLEPSZY\_PIWOT), ponieważ w każdym przypadku czas operacji sortowania się wydłuża (nieznacznie)
+\item Za uniwersalny można przyjąć algorytm Quicksort, działa bardzo szybko dla każdego rodzaju i zakresu danych
+\item Z moich doświadczeń wynikło iż zakres losowań nie wpływa znacząco na szybkość algorytmów
+\item Wyniki zaprezentowane w sprawozdaniu zostały przeprowadzne na Systemie operacyjnym \\\textbf{UBUNTU}, program został zbudowany przy pomocy kompilatora\textbf{ GCC}, wykorzystując 1 rdzeń procesora
+\item Testy zostały również przeprowadzone w systemie \textbf{Windows 7 x64} - kompilowany za pomocą \textbf{Visual C++ 2010} z dodatkową komendą \textbf{/MP - MultiProcessor} - w przypadku użycia dwóch rdzeni IntroSort działa bardzo szybko - czas sortowania tablicy \textbf{1 000 000 elementów} oraz posortowaną w \textbf{99\%} wynosił niecałe 2 [s] (w przypadku \textbf{25\%} czas wynosił średnio \textbf{10,8 [s]})
+\end{enumerate}
+\begin{center}
+\textbf{\\Testy zostały wykonane na komputerze o parametrach:}\\
+Windows 7 x64 / Ubuntu 13.10, 4GB RAM, Intel Celeron(R) Dual-Core CPU T3500 @ 2.10GHz
+\end{center}
+\end{document}
